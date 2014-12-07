@@ -36,12 +36,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         if (!operation.error) {
-            NSString *jsonError = ((NSDictionary *)responseObject)[@"Error"];
-            if (!jsonError && jsonError.length==0) {
-                success(responseObject);
-            } else {
-                failure([NSError errorWithDomain:@"Bad Request?" code:400 userInfo:@{@"Error Response:":jsonError}]);
-            }
+            success(responseObject);
         } else {
             failure(operation.error);
         }
