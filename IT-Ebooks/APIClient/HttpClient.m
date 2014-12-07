@@ -34,19 +34,22 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         if (!operation.error) {
-            NSError *jsonError = nil;
-            if (!jsonError) {
+            NSString *jsonError = ((NSDictionary *)responseObject)[@"Error"];
+            if (!jsonError && jsonError.length==0) {
                 success(responseObject);
             } else {
-                failure(jsonError);
+                failure([NSError errorWithDomain:@"Bad Request?" code:400 userInfo:@{@"Error Response:":jsonError}]);
             }
         } else {
             failure(operation.error);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        failure(error);
     }];
     [operation start];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 @end
