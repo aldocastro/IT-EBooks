@@ -18,7 +18,7 @@ static NSString *CellIdentifier = @"BookCell";
 {
     NSMutableArray *books;
     UIAlertController *alertController;
-    JGProgressHUD *progressHUD;
+    JGProgressHUD *progressHUD, *noResultsHUD;
 }
 
 - (void)viewDidLoad {
@@ -32,6 +32,7 @@ static NSString *CellIdentifier = @"BookCell";
     if (!progressHUD) {
         progressHUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
         progressHUD.textLabel.text = @"Searching...";
+        progressHUD.interactionType = JGProgressHUDInteractionTypeBlockAllTouches;
         [progressHUD showInView:self.view animated:YES];
     } else {
         [progressHUD dismissAnimated:YES];
@@ -39,16 +40,31 @@ static NSString *CellIdentifier = @"BookCell";
     }
 }
 
+- (void)showNoResultsFoundHUD {
+    noResultsHUD = nil;
+    noResultsHUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
+    noResultsHUD.textLabel.text = @"No results found.";
+    [noResultsHUD dismissAfterDelay:1.5 animated:YES];
+    [noResultsHUD showInView:self.view];
+}
+
 - (void)doSearchFor:(NSString *)query {
-    [self toogleHUD];
-    [[APIClient shareInstance] searchByQuery:query onSuccess:^(Books *result) {
+    if (query && query.length>0) {
         [self toogleHUD];
-        [books addObjectsFromArray:result.books];
-        [self.collectionView reloadData];
-    } onFailure:^(NSError *error) {
-        [self toogleHUD];
-        NSLog(@"error: %@", error.description);
-    }];
+        [[APIClient shareInstance] searchByQuery:query onSuccess:^(Books *result) {
+            [self toogleHUD];
+            if ([result.total isEqualToString:@"0"]) {
+                [self showNoResultsFoundHUD];
+                NSLog(@"No results found.");
+            } else {
+                [books addObjectsFromArray:result.books];
+                [self.collectionView reloadData];
+            }
+        } onFailure:^(NSError *error) {
+            [self toogleHUD];
+            NSLog(@"error: %@", error.description);
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,16 +88,15 @@ static NSString *CellIdentifier = @"BookCell";
     if (!alertController) {
         __block UITextField *inputTextField;
         __weak typeof(self)weakSelf = self;
-        alertController = [UIAlertController alertControllerWithTitle:@"Search" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        alertController = [UIAlertController alertControllerWithTitle:@"Search E-book" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
             inputTextField = textField;
-            textField.placeholder = @"search query";
+            textField.placeholder = @"Enter query";
         }];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             __strong typeof(weakSelf)strongSelf = weakSelf;
             [strongSelf doSearchFor:inputTextField.text];
         }]];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:NULL]];
     }
     [self presentViewController:alertController animated:YES completion:NULL];
 }
