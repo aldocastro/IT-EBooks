@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */; };
 		6E61BA191A330E0600DCC16F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA181A330E0600DCC16F /* main.m */; };
 		6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1B1A330E0600DCC16F /* AppDelegate.m */; };
-		6E61BA1F1A330E0600DCC16F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1E1A330E0600DCC16F /* ViewController.m */; };
+		6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */; };
 		6E61BA221A330E0600DCC16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E61BA201A330E0600DCC16F /* Main.storyboard */; };
 		6E61BA241A330E0600DCC16F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61BA231A330E0600DCC16F /* Images.xcassets */; };
 		6E61BA271A330E0600DCC16F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E61BA251A330E0600DCC16F /* LaunchScreen.xib */; };
 		6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */; };
+		6EA426371A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
+		6EA426381A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
+		6EA426391A330F3300E058A4 /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* Books.m */; };
+		6EA4263A1A330F3300E058A4 /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* Books.m */; };
+		6EA4263D1A34C4C100E058A4 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* HttpClient.m */; };
+		6EA4263E1A34C4C100E058A4 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* HttpClient.m */; };
+		6EA426421A34C7FF00E058A4 /* BookDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */; };
+		6EA426431A34C7FF00E058A4 /* BookDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */; };
+		99989535BA46DD18534FA4A6 /* libPods-IT-EbooksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +37,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E3CDA422522F89142F28A35 /* Pods-IT-EbooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-EbooksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IT-Ebooks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67CB13FACF88C81F773A4892 /* Pods-IT-Ebooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-Ebooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks.release.xcconfig"; sourceTree = "<group>"; };
 		6E61BA131A330E0600DCC16F /* IT-Ebooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT-Ebooks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61BA171A330E0600DCC16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E61BA181A330E0600DCC16F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6E61BA1A1A330E0600DCC16F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6E61BA1B1A330E0600DCC16F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6E61BA1D1A330E0600DCC16F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6E61BA1E1A330E0600DCC16F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6E61BA1D1A330E0600DCC16F /* SearchResultsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsVC.h; sourceTree = "<group>"; };
+		6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsVC.m; sourceTree = "<group>"; };
 		6E61BA211A330E0600DCC16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E61BA231A330E0600DCC16F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6E61BA261A330E0600DCC16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6E61BA2C1A330E0600DCC16F /* IT-EbooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IT-EbooksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61BA311A330E0600DCC16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IT_EbooksTests.m; sourceTree = "<group>"; };
+		6EA426331A330F3300E058A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		6EA426341A330F3300E058A4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		6EA426351A330F3300E058A4 /* Books.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Books.h; sourceTree = "<group>"; };
+		6EA426361A330F3300E058A4 /* Books.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Books.m; sourceTree = "<group>"; };
+		6EA4263B1A34C4C100E058A4 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		6EA4263C1A34C4C100E058A4 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		6EA426401A34C7FF00E058A4 /* BookDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailsVC.h; sourceTree = "<group>"; };
+		6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailsVC.m; sourceTree = "<group>"; };
+		A9EA6685D5D50A2E779E3CD8 /* Pods-IT-EbooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-EbooksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-Ebooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks.debug.xcconfig"; sourceTree = "<group>"; };
+		B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IT-EbooksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99989535BA46DD18534FA4A6 /* libPods-IT-EbooksTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +92,8 @@
 				6E61BA151A330E0600DCC16F /* IT-Ebooks */,
 				6E61BA2F1A330E0600DCC16F /* IT-EbooksTests */,
 				6E61BA141A330E0600DCC16F /* Products */,
+				A6D19BD07FD07325C4F9555E /* Pods */,
+				E41E7C2917848B55834CD574 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +109,13 @@
 		6E61BA151A330E0600DCC16F /* IT-Ebooks */ = {
 			isa = PBXGroup;
 			children = (
+				6EA426321A330F3300E058A4 /* APIClient */,
 				6E61BA1A1A330E0600DCC16F /* AppDelegate.h */,
 				6E61BA1B1A330E0600DCC16F /* AppDelegate.m */,
-				6E61BA1D1A330E0600DCC16F /* ViewController.h */,
-				6E61BA1E1A330E0600DCC16F /* ViewController.m */,
+				6E61BA1D1A330E0600DCC16F /* SearchResultsVC.h */,
+				6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */,
+				6EA426401A34C7FF00E058A4 /* BookDetailsVC.h */,
+				6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */,
 				6E61BA201A330E0600DCC16F /* Main.storyboard */,
 				6E61BA231A330E0600DCC16F /* Images.xcassets */,
 				6E61BA251A330E0600DCC16F /* LaunchScreen.xib */,
@@ -119,6 +150,47 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6EA426321A330F3300E058A4 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				6EA4263F1A34C79700E058A4 /* Model */,
+				6EA426331A330F3300E058A4 /* APIClient.h */,
+				6EA426341A330F3300E058A4 /* APIClient.m */,
+				6EA4263B1A34C4C100E058A4 /* HttpClient.h */,
+				6EA4263C1A34C4C100E058A4 /* HttpClient.m */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		6EA4263F1A34C79700E058A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EA426351A330F3300E058A4 /* Books.h */,
+				6EA426361A330F3300E058A4 /* Books.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A6D19BD07FD07325C4F9555E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */,
+				67CB13FACF88C81F773A4892 /* Pods-IT-Ebooks.release.xcconfig */,
+				2E3CDA422522F89142F28A35 /* Pods-IT-EbooksTests.debug.xcconfig */,
+				A9EA6685D5D50A2E779E3CD8 /* Pods-IT-EbooksTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E41E7C2917848B55834CD574 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */,
+				B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E61BA361A330E0600DCC16F /* Build configuration list for PBXNativeTarget "IT-Ebooks" */;
 			buildPhases = (
+				DAC8B85ED41B032A0405426E /* Check Pods Manifest.lock */,
 				6E61BA0F1A330E0600DCC16F /* Sources */,
 				6E61BA101A330E0600DCC16F /* Frameworks */,
 				6E61BA111A330E0600DCC16F /* Resources */,
+				06B77AFAB78B5301FA1486DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +217,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E61BA391A330E0600DCC16F /* Build configuration list for PBXNativeTarget "IT-EbooksTests" */;
 			buildPhases = (
+				876D86BEF710374313719A61 /* Check Pods Manifest.lock */,
 				6E61BA281A330E0600DCC16F /* Sources */,
 				6E61BA291A330E0600DCC16F /* Frameworks */,
 				6E61BA2A1A330E0600DCC16F /* Resources */,
+				D7305345250BBEB84A2AC397 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +244,11 @@
 				TargetAttributes = {
 					6E61BA121A330E0600DCC16F = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6E61BA2B1A330E0600DCC16F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -214,14 +295,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06B77AFAB78B5301FA1486DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		876D86BEF710374313719A61 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7305345250BBEB84A2AC397 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC8B85ED41B032A0405426E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E61BA0F1A330E0600DCC16F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E61BA1F1A330E0600DCC16F /* ViewController.m in Sources */,
+				6EA426421A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
+				6EA4263D1A34C4C100E058A4 /* HttpClient.m in Sources */,
+				6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */,
+				6EA426391A330F3300E058A4 /* Books.m in Sources */,
 				6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */,
 				6E61BA191A330E0600DCC16F /* main.m in Sources */,
+				6EA426371A330F3300E058A4 /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +377,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA426431A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
+				6EA4263A1A330F3300E058A4 /* Books.m in Sources */,
 				6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */,
+				6EA4263E1A34C4C100E058A4 /* HttpClient.m in Sources */,
+				6EA426381A330F3300E058A4 /* APIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,26 +493,33 @@
 		};
 		6E61BA371A330E0600DCC16F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aldo Castro (EJ9PY36MU8)";
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4071c9e-4532-4ef1-b0fb-aa7a3a41cb31";
 			};
 			name = Debug;
 		};
 		6E61BA381A330E0600DCC16F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67CB13FACF88C81F773A4892 /* Pods-IT-Ebooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aldo Castro (EJ9PY36MU8)";
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b4071c9e-4532-4ef1-b0fb-aa7a3a41cb31";
 			};
 			name = Release;
 		};
 		6E61BA3A1A330E0600DCC16F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E3CDA422522F89142F28A35 /* Pods-IT-EbooksTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -380,6 +539,7 @@
 		};
 		6E61BA3B1A330E0600DCC16F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9EA6685D5D50A2E779E3CD8 /* Pods-IT-EbooksTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -412,6 +572,7 @@
 				6E61BA381A330E0600DCC16F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E61BA391A330E0600DCC16F /* Build configuration list for PBXNativeTarget "IT-EbooksTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +581,7 @@
 				6E61BA3B1A330E0600DCC16F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
