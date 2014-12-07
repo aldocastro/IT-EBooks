@@ -8,12 +8,12 @@
 @implementation Book
 +(JSONKeyMapper*)keyMapper {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-            @"Description": @"mDescription",
-            @"ID": @"mBookId",
-            @"Image": @"mImage",
-            @"SubTitle":@"mSubTitle",
-            @"Title":@"mTitle",
-            @"isbn":@"mIsbn"
+            @"Description" : @"mDescription",
+            @"ID" : @"mBookId",
+            @"Image" : @"mImage",
+            @"SubTitle" : @"mSubTitle",
+            @"Title" : @"mTitle",
+            @"isbn" : @"mIsbn"
     }];
 }
 
@@ -31,7 +31,10 @@
 @implementation Books
 +(JSONKeyMapper*)keyMapper {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-            @"Books": @"books"
+            @"Books" : @"books",
+            @"Error" : @"error",
+            @"Total" : @"total",
+            @"Page" : @"page"
     }];
 }
 @end

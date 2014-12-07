@@ -27,12 +27,15 @@
 @property (nonatomic, strong) NSString *mDescription;
 @property (nonatomic, strong) NSString *mBookId;
 @property (nonatomic, strong) NSURL *mImage;
-@property (nonatomic, strong) NSString *mSubTitle;
+@property (nonatomic, strong) NSString <Optional> *mSubTitle;
 @property (nonatomic, strong) NSString *mTitle;
 @property (nonatomic, strong) NSString *mIsbn;
 -(UIImage *)getImage;
 @end
 
 @interface Books : JSONModel
-@property (nonatomic, strong) NSArray<Book> *books;
+@property (nonatomic, strong) NSArray<Optional, Book> *books;
+@property (nonatomic, assign) NSString <Optional> *error;
+@property (nonatomic, assign) NSString <Optional> *total;
+@property (nonatomic, assign) NSString <Optional> *page;
 @end
