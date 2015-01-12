@@ -8,17 +8,50 @@
 
 #import "BookDetailsVC.h"
 #import "Books.h"
+#import "APIClient.h"
+#import "UIImageView+Networking.h"
 
-@interface BookDetailsVC()
-@property (nonatomic) Book *book;
-@end
+//  TODO: prepare view when there is no data to show.
 
-@implementation BookDetailsVC
+@implementation BookDetailsVC {
+    UITapGestureRecognizer *imageTapGestureRecognizer;
+}
 
--(void)setBook:(Book *)book {
-    if (book != nil) {
-        self.book = book;
-    }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[APIClient shareInstance] searchBookId:_bookID onSuccess:^(BookDetails *book) {
+        if (book && !book.Error) {
+            _book = book;
+            [self updateUI];
+        }
+    } onFailure:^(NSError *error) {
+        NSLog(@"error: %@", error.debugDescription);
+    }];
+}
+
+- (void)updateUI {
+    self.title = _book.Title;
+    [self.book_title setText:_book.Title];
+    [self.book_subtitle setText:_book.SubTitle];
+    [self.book_author setText:_book.Author];
+    [self.book_description setText:_book.Description];
+    [self.book_picture setImageWithURL:_book.Image placeholderImage:[UIImage imageNamed:@"placeholder-medium"]];
+    imageTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImageViewer:)];
+    [self.book_picture addGestureRecognizer:imageTapGestureRecognizer];
+    [self.book_picture setUserInteractionEnabled:YES];
+}
+
+- (void)openImageViewer:(UITapGestureRecognizer *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"imageViewer"];
+    UIImageView *imageView = (UIImageView *)[viewController.view viewWithTag:1];
+    viewController.title = _book.Title;
+    [imageView setImageWithURL:_book.Image placeholderImage:self.book_picture.image];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)downloadButtonPressed:(id)sender {
+    
 }
 
 @end
