@@ -55,14 +55,18 @@ static NSString *CellIdentifier = @"BookCell";
 }
 
 - (void)addTapGestureRecognizerToView {
-    [self.view setAlpha:0.6];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view setAlpha:0.4];
+    }];
     tapGestureRecognizer = [UITapGestureRecognizer new];
     [tapGestureRecognizer addTarget:self action:@selector(didTapViewWithGestureRecognizer:)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)didTapViewWithGestureRecognizer:(UITapGestureRecognizer *)gestureRecognizer {
-    [self.view setAlpha:1.0];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view setAlpha:1.0];
+    }];
     [_searchBar resignFirstResponder];
     [self.view removeGestureRecognizer:tapGestureRecognizer];
 }
@@ -163,7 +167,9 @@ static NSString *CellIdentifier = @"BookCell";
     }
     [self.view removeGestureRecognizer:tapGestureRecognizer];
     tapGestureRecognizer = nil;
-    [self.view setAlpha:1.0];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view setAlpha:1.0];
+    }];
     [self doSearch];
 }
 
