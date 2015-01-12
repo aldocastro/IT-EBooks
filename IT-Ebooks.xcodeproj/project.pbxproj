@@ -15,6 +15,7 @@
 		6E61BA241A330E0600DCC16F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E61BA231A330E0600DCC16F /* Images.xcassets */; };
 		6E61BA271A330E0600DCC16F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E61BA251A330E0600DCC16F /* LaunchScreen.xib */; };
 		6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */; };
+		6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */; };
 		6EA426371A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
 		6EA426381A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
 		6EA426391A330F3300E058A4 /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* Books.m */; };
@@ -53,6 +54,7 @@
 		6E61BA2C1A330E0600DCC16F /* IT-EbooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IT-EbooksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61BA311A330E0600DCC16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IT_EbooksTests.m; sourceTree = "<group>"; };
+		6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6EA426331A330F3300E058A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		6EA426341A330F3300E058A4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		6EA426351A330F3300E058A4 /* Books.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Books.h; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */,
 				2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +188,7 @@
 		E41E7C2917848B55834CD574 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */,
 				459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */,
 				B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */,
 			);
@@ -203,6 +207,7 @@
 				6E61BA101A330E0600DCC16F /* Frameworks */,
 				6E61BA111A330E0600DCC16F /* Resources */,
 				06B77AFAB78B5301FA1486DC /* Copy Pods Resources */,
+				6E7769B51A616A7400ABEF55 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -310,6 +315,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6E7769B51A616A7400ABEF55 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run ab73dc3c453231c8f2badc031b8e8a6a76247f70 5276528184073c4918813c520908cd3a63c64da148a5b23d0ae7d2da6e1f91e3";
 		};
 		876D86BEF710374313719A61 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
