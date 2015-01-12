@@ -18,6 +18,8 @@
 		6E6522F11A5C4721009E2AA4 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6522F01A5C4721009E2AA4 /* BookCell.m */; };
 		6E6522F21A5C4721009E2AA4 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6522F01A5C4721009E2AA4 /* BookCell.m */; };
 		6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */; };
+		6E7769BA1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
+		6E7769BB1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
 		6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6EA426371A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
@@ -61,6 +63,8 @@
 		6E6522EF1A5C4721009E2AA4 /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		6E6522F01A5C4721009E2AA4 /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
 		6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		6E7769B81A616EEF00ABEF55 /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
+		6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		6E7769C21A62CC0000ABEF55 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
 		6E7769C31A62CC0000ABEF55 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 		6EA426331A330F3300E058A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		6E61BA151A330E0600DCC16F /* IT-Ebooks */ = {
 			isa = PBXGroup;
 			children = (
+				6E7769BC1A61727800ABEF55 /* Categories */,
 				6EA426321A330F3300E058A4 /* APIClient */,
 				6E61BA1A1A330E0600DCC16F /* AppDelegate.h */,
 				6E61BA1B1A330E0600DCC16F /* AppDelegate.m */,
@@ -163,6 +168,15 @@
 				6E61BA311A330E0600DCC16F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E7769BC1A61727800ABEF55 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6E7769B81A616EEF00ABEF55 /* UIImageView+Networking.h */,
+				6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		6EA426321A330F3300E058A4 /* APIClient */ = {
@@ -397,6 +411,7 @@
 				6EA426421A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
 				6EA4263D1A34C4C100E058A4 /* HttpClient.m in Sources */,
 				6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */,
+				6E7769BA1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */,
 				6EA426391A330F3300E058A4 /* Books.m in Sources */,
 				6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */,
 				6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */,
@@ -414,6 +429,7 @@
 				6EA4263A1A330F3300E058A4 /* Books.m in Sources */,
 				6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */,
 				6EA4263E1A34C4C100E058A4 /* HttpClient.m in Sources */,
+				6E7769BB1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */,
 				6E6522F21A5C4721009E2AA4 /* BookCell.m in Sources */,
 				6EA426381A330F3300E058A4 /* APIClient.m in Sources */,
 			);
