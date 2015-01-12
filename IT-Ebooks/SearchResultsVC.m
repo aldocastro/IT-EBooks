@@ -9,23 +9,62 @@
 #import "SearchResultsVC.h"
 #import "APIClient.h"
 #import "Books.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
+#import "BookCell.h"
+#import "BookDetailsVC.h"
 #import <JGProgressHUD/JGProgressHUD.h>
 
 static NSString *CellIdentifier = @"BookCell";
 
-@implementation SearchResultsVC
+@interface SearchResultsVC() <UICollectionViewDataSource, UISearchBarDelegate>
 {
+    int currentPage;
+    NSString *query;
     NSMutableArray *books;
-    UIAlertController *alertController;
     JGProgressHUD *progressHUD, *noResultsHUD;
+    UITapGestureRecognizer *tapGestureRecognizer;
+    UISearchBar *_searchBar;
 }
+@end
+
+@implementation SearchResultsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     books = [@[] mutableCopy];
-    self.title = @"IT Ebooks";
     self.collectionView.dataSource = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self prepareSearchBar];
+}
+
+- (void)prepareSearchBar {
+    if (!_searchBar) {
+        CGFloat searchBarBoundsY =  self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, searchBarBoundsY, [UIScreen mainScreen].bounds.size.width, 44)];
+        _searchBar.searchBarStyle       = UISearchBarStyleDefault;
+        _searchBar.tintColor            = [UIColor grayColor];
+        _searchBar.barTintColor         = [UIColor blueColor];
+        _searchBar.delegate             = self;
+        _searchBar.placeholder          = @"Search here";
+        _searchBar.returnKeyType        = UIReturnKeySearch;
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor grayColor]];
+        [self.navigationItem setTitleView:_searchBar];
+    }
+}
+
+- (void)addTapGestureRecognizerToView {
+    [self.view setAlpha:0.6];
+    tapGestureRecognizer = [UITapGestureRecognizer new];
+    [tapGestureRecognizer addTarget:self action:@selector(didTapViewWithGestureRecognizer:)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+}
+
+- (void)didTapViewWithGestureRecognizer:(UITapGestureRecognizer *)gestureRecognizer {
+    [self.view setAlpha:1.0];
+    [_searchBar resignFirstResponder];
+    [self.view removeGestureRecognizer:tapGestureRecognizer];
 }
 
 - (void)toogleHUD {
@@ -40,30 +79,43 @@ static NSString *CellIdentifier = @"BookCell";
     }
 }
 
-- (void)showNoResultsFoundHUD {
+- (void)showHUDWithMessage:(NSString *)message {
     noResultsHUD = nil;
     noResultsHUD = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleLight];
-    noResultsHUD.textLabel.text = @"No results found.";
+    noResultsHUD.textLabel.text = message;
     [noResultsHUD dismissAfterDelay:1.5 animated:YES];
     [noResultsHUD showInView:self.view];
 }
 
-- (void)doSearchFor:(NSString *)query {
+- (void)doSearch {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     if (query && query.length>0) {
         [self toogleHUD];
-        [[APIClient shareInstance] searchByQuery:query onSuccess:^(Books *result) {
+        [[APIClient shareInstance] searchByQuery:query onPage:currentPage onSuccess:^(BookSearch *result) {
             [self toogleHUD];
-            if ([result.total isEqualToString:@"0"]) {
-                [self showNoResultsFoundHUD];
+            if ([result.Total isEqualToString:@"0"]) {
+                [self showHUDWithMessage:@"No results found."];
                 NSLog(@"No results found.");
             } else {
-                [books addObjectsFromArray:result.books];
+                [self addBooksFromSet:result.Books];
                 [self.collectionView reloadData];
             }
         } onFailure:^(NSError *error) {
             [self toogleHUD];
+            [self showHUDWithMessage:error.debugDescription];
             NSLog(@"error: %@", error.description);
         }];
+    }
+}
+
+- (void)addBooksFromSet:(NSSet *)bookSet {
+    if (bookSet && bookSet.count>0) {
+        NSLog(@"bookSet count: %li", (long)bookSet.count);
+        for (Books *cBook in bookSet) {
+            if (![books containsObject:cBook]) {
+                [books addObject:cBook];
+            }
+        }
     }
 }
 
@@ -72,33 +124,47 @@ static NSString *CellIdentifier = @"BookCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"openDetails"]) {
+        // prepare Book oject to display
+        Books *book = ((BookCell*)sender).book;
+        BookDetailsVC *detailVC = (BookDetailsVC *)segue.destinationViewController;
+        detailVC.bookID = book.ID;
+    }
+}
+
+#pragma mark - UICollectionViewDelegate
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return books.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    Book *book = (Book*)books[indexPath.row];
-    UIImageView *imageView = (UIImageView*)[cell viewWithTag:1];
-    [imageView setImageWithURL:book.mImage placeholderImage:nil];
+- (BookCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BookCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    [cell setCellWithBook:[books objectAtIndex:indexPath.row]];
     return cell;
 }
 
-- (void)searchButtonPressed:(id)sender {
-    if (!alertController) {
-        __block UITextField *inputTextField;
-        __weak typeof(self)weakSelf = self;
-        alertController = [UIAlertController alertControllerWithTitle:@"Search E-book" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-            inputTextField = textField;
-            textField.placeholder = @"Enter query";
-        }];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            __strong typeof(weakSelf)strongSelf = weakSelf;
-            [strongSelf doSearchFor:inputTextField.text];
-        }]];
+#pragma mark - SearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar becomeFirstResponder];
+    [self addTapGestureRecognizerToView];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    if (query && [query isEqualToString:searchBar.text]) {
+        currentPage++;
+    } else {
+        currentPage = 1;
+        query = searchBar.text;
+        [books removeAllObjects];
     }
-    [self presentViewController:alertController animated:YES completion:NULL];
+    [self.view removeGestureRecognizer:tapGestureRecognizer];
+    tapGestureRecognizer = nil;
+    [self.view setAlpha:1.0];
+    [self doSearch];
 }
 
 @end

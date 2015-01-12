@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchResultsVC : UICollectionViewController <UICollectionViewDataSource>
-- (IBAction)searchButtonPressed:(id)sender;
+@interface SearchResultsVC : UICollectionViewController
 @end
 
