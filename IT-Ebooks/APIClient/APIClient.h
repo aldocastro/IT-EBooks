@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class Books;
-@class Book;
+@class BookSearch;
+@class BookDetails;
 @interface APIClient : NSObject
 + (APIClient *)shareInstance;
-- (void)searchByQuery:(NSString *)query onSuccess:(void (^)(Books *results))success onFailure:(void (^)(NSError *error))failure;
-- (void)searchByQuery:(NSString *)query onPage:(int)page onSuccess:(void (^)(Books *books))success onFailure:(void (^)(NSError *error))failure;
-- (void)searchBookId:(NSString *)book_id onSuccess:(void(^)(Book *book))success onFailure:(void(^)(NSError *error))failure;
+- (void)searchByQuery:(NSString *)query onSuccess:(void (^)(BookSearch *results))success onFailure:(void (^)(NSError *error))failure;
+- (void)searchByQuery:(NSString *)query onPage:(int)page onSuccess:(void (^)(BookSearch *books))success onFailure:(void (^)(NSError *error))failure;
+- (void)searchBookId:(NSString *)book_id onSuccess:(void(^)(BookDetails *book))success onFailure:(void(^)(NSError *error))failure;
 @end
