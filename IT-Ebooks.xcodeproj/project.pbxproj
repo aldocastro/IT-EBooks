@@ -20,6 +20,8 @@
 		6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */; };
 		6E7769BA1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
 		6E7769BB1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
+		6E7769C01A619BFD00ABEF55 /* ebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7769BD1A6197D900ABEF55 /* ebooks.json */; };
+		6E7769C11A619BFF00ABEF55 /* ebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7769BD1A6197D900ABEF55 /* ebooks.json */; };
 		6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6EA426371A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
@@ -65,6 +67,7 @@
 		6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6E7769B81A616EEF00ABEF55 /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
+		6E7769BD1A6197D900ABEF55 /* ebooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ebooks.json; sourceTree = "<group>"; };
 		6E7769C21A62CC0000ABEF55 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
 		6E7769C31A62CC0000ABEF55 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 		6EA426331A330F3300E058A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 			children = (
 				6E61BA171A330E0600DCC16F /* Info.plist */,
 				6E61BA181A330E0600DCC16F /* main.m */,
+				6E7769BD1A6197D900ABEF55 /* ebooks.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 			files = (
 				6E61BA221A330E0600DCC16F /* Main.storyboard in Resources */,
 				6E61BA271A330E0600DCC16F /* LaunchScreen.xib in Resources */,
+				6E7769C01A619BFD00ABEF55 /* ebooks.json in Resources */,
 				6E61BA241A330E0600DCC16F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7769C11A619BFF00ABEF55 /* ebooks.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
