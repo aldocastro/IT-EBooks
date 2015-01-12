@@ -552,11 +552,15 @@
 			baseConfigurationReference = B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Aldo Castro (EJ9PY36MU8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b4071c9e-4532-4ef1-b0fb-aa7a3a41cb31";
+				PROVISIONING_PROFILE = "22861c9e-2654-4dc7-8990-f5a10e367745";
 			};
 			name = Debug;
 		};
@@ -565,11 +569,15 @@
 			baseConfigurationReference = 67CB13FACF88C81F773A4892 /* Pods-IT-Ebooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Aldo Castro (EJ9PY36MU8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b4071c9e-4532-4ef1-b0fb-aa7a3a41cb31";
+				PROVISIONING_PROFILE = "22861c9e-2654-4dc7-8990-f5a10e367745";
 			};
 			name = Release;
 		};
