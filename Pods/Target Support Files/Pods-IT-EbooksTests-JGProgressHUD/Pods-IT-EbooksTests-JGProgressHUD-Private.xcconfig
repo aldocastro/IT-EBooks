@@ -1,5 +1,5 @@
 #include "Pods-IT-EbooksTests-JGProgressHUD.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/JGProgressHUD" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/JGProgressHUD" "${PODS_ROOT}/Headers/Public/JSONModel"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/JGProgressHUD" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/JGProgressHUD" "${PODS_ROOT}/Headers/Public/OHHTTPStubs"
 OTHER_LDFLAGS = ${PODS_IT_EBOOKSTESTS_JGPROGRESSHUD_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}

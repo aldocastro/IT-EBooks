@@ -4,17 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-IT-Ebooks-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IT-Ebooks-JGProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-IT-Ebooks-JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,17 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-IT-EbooksTests-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IT-EbooksTests-JGProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-IT-EbooksTests-JSONModel.xcscheme</key>
+		<key>Pods-IT-EbooksTests-OHHTTPStubs.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08644D13C5F504E50865A783</key>
+		<key>083358C107DAC8B65292A056</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2C7F4097B6E5F75CD0A3F12E</key>
+		<key>2276EC50F910D81E745BC2C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65128D46FBA21A6BFCE63B77</key>
+		<key>3334D3A68C1D434635A6837D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B6B707F1C1D5E0EA1365A66</key>
+		<key>4448382C4BE5992F15240A55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA60287004DC570CED3A2BA5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBE695B80CD7B6A86CCFC6F6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ECA22B8237BF9094F94C97E4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EDB08950C6EB2AAFADEE6683</key>
+		<key>6C4F799E9F7AC25642A5F5F7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
