@@ -7,44 +7,66 @@
 //
 
 #import "HttpClient.h"
-#import <AFNetworking/AFNetworking.h>
+
+@interface HttpClient() {
+    NSString *_baseURL;
+    NSURLSession *_session;
+}
+
+@end
 
 @implementation HttpClient
+@synthesize baseURL = _baseURL;
 
-//- (void)GET:(NSString *)path withSuccess:(void(^)(NSDictionary *json))success onFailure:(void(^)(NSError *error))failure {
-//    NSURLSession *session = [NSURLSession sharedSession];
-//    [[session dataTaskWithURL:[NSURL URLWithString:path] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//        if (!error) {
-//            NSError *jsonError = nil;
-//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-//            if (!jsonError) {
-//                success(json);
-//            } else {
-//                failure(jsonError);
-//            }
-//        } else {
-//            failure(error);
-//        }
-//    }] resume];
-//}
+- (instancetype)initWithBaseURL:(NSString *)baseUrl {
+    self = [super init];
+    if (self) {
+        _baseURL = baseUrl;
+        NSURLSessionConfiguration *_configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        [_configuration setRequestCachePolicy:NSURLRequestReloadIgnoringCacheData];
+        _configuration.HTTPAdditionalHeaders = @{@"Accept": @"application/json",
+                                                 @"Accept-Language": @"en-US",
+                                                 @"User-Agent": [[self class] userAgent]};
+        _configuration.timeoutIntervalForRequest = 30;
+        _session = [NSURLSession sessionWithConfiguration:_configuration delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    }
+    return self;
+}
+
++ (NSString *)userAgent {
+    return [NSString stringWithFormat:@"IT-Ebooks/com.acastro.it-ebooks (%@; %@ %@)", [[UIDevice currentDevice] name], [[UIDevice currentDevice] systemName],[[UIDevice currentDevice] systemVersion]];
+}
+
+- (NSURL *)escapedTaskURLWithPath:(NSString *)path {
+    NSString *escapedString = [[NSString stringWithFormat:@"%@%@",_baseURL, path] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [NSURL URLWithString:escapedString];
+}
 
 - (void)GET:(NSString *)path withSuccess:(void(^)(NSDictionary *json))success onFailure:(void(^)(NSError *error))failure {
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:path]];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURL *escapedURL = [self escapedTaskURLWithPath:path];
+    NSLog(@"escaped path: %@", escapedURL);
+    [[_session dataTaskWithURL:escapedURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        if (!operation.error) {
-            success(responseObject);
+        if (!error) {
+            NSError *jsonError = nil;
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+            if (json && !jsonError) {
+                NSLog(@"json: %@", json);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                   success(json);
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure(jsonError);
+                });
+            }
         } else {
-            failure(operation.error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(error);
+            });
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        failure(error);
-    }];
-    [operation start];
+    }] resume];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
+
 @end
