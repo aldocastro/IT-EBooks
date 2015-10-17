@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */; };
+		6E3087801BD2757A002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; settings = {ASSET_TAGS = (); }; };
+		6E3087811BD277C7002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; settings = {ASSET_TAGS = (); }; };
+		6E3087831BD279FC002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; settings = {ASSET_TAGS = (); }; };
+		6E3087841BD27D47002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; settings = {ASSET_TAGS = (); }; };
+		6E3087871BD27F8C002FF1D7 /* WebsiteIndexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */; settings = {ASSET_TAGS = (); }; };
 		6E61BA191A330E0600DCC16F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA181A330E0600DCC16F /* main.m */; };
 		6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1B1A330E0600DCC16F /* AppDelegate.m */; };
 		6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */; };
@@ -17,21 +22,27 @@
 		6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */; };
 		6E6522F11A5C4721009E2AA4 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6522F01A5C4721009E2AA4 /* BookCell.m */; };
 		6E6522F21A5C4721009E2AA4 /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6522F01A5C4721009E2AA4 /* BookCell.m */; };
-		6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */; };
 		6E7769BA1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
 		6E7769BB1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */; };
 		6E7769C01A619BFD00ABEF55 /* ebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7769BD1A6197D900ABEF55 /* ebooks.json */; };
 		6E7769C11A619BFF00ABEF55 /* ebooks.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E7769BD1A6197D900ABEF55 /* ebooks.json */; };
 		6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
-		6EA426371A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
-		6EA426381A330F3300E058A4 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* APIClient.m */; };
-		6EA426391A330F3300E058A4 /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* Books.m */; };
-		6EA4263A1A330F3300E058A4 /* Books.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* Books.m */; };
-		6EA4263D1A34C4C100E058A4 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* HttpClient.m */; };
-		6EA4263E1A34C4C100E058A4 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* HttpClient.m */; };
+		6E8A4DC81B4491DC005A03F3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8A4DC71B4491DC005A03F3 /* libxml2.dylib */; };
+		6EA426371A330F3300E058A4 /* IBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* IBSAPIClient.m */; };
+		6EA426381A330F3300E058A4 /* IBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* IBSAPIClient.m */; };
+		6EA426391A330F3300E058A4 /* IBSBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* IBSBooks.m */; };
+		6EA4263A1A330F3300E058A4 /* IBSBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* IBSBooks.m */; };
+		6EA4263D1A34C4C100E058A4 /* IBSHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* IBSHttpClient.m */; };
+		6EA4263E1A34C4C100E058A4 /* IBSHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4263C1A34C4C100E058A4 /* IBSHttpClient.m */; };
 		6EA426421A34C7FF00E058A4 /* BookDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */; };
 		6EA426431A34C7FF00E058A4 /* BookDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */; };
+		6EB549541A841E65006A70B1 /* IBSServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549531A841E65006A70B1 /* IBSServerConfiguration.m */; };
+		6EB549551A841E65006A70B1 /* IBSServerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549531A841E65006A70B1 /* IBSServerConfiguration.m */; };
+		6EB549581A8421B4006A70B1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549571A8421B4006A70B1 /* Reachability.m */; };
+		6EB549591A8421B4006A70B1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549571A8421B4006A70B1 /* Reachability.m */; };
+		6EB5495C1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */; };
+		6EB5495D1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */; };
 		99989535BA46DD18534FA4A6 /* libPods-IT-EbooksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +60,10 @@
 		2E3CDA422522F89142F28A35 /* Pods-IT-EbooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-EbooksTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests.debug.xcconfig"; sourceTree = "<group>"; };
 		459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IT-Ebooks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CB13FACF88C81F773A4892 /* Pods-IT-Ebooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-Ebooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks.release.xcconfig"; sourceTree = "<group>"; };
+		6E30877F1BD2757A002FF1D7 /* content-wrapper.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "content-wrapper.html"; path = "IT-EbooksTests/content-wrapper.html"; sourceTree = SOURCE_ROOT; };
+		6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "it-ebooks-index.html"; path = "IT-EbooksTests/it-ebooks-index.html"; sourceTree = SOURCE_ROOT; };
+		6E3087851BD27F8C002FF1D7 /* WebsiteIndexParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsiteIndexParser.h; sourceTree = "<group>"; };
+		6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsiteIndexParser.m; sourceTree = "<group>"; };
 		6E61BA131A330E0600DCC16F /* IT-Ebooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IT-Ebooks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E61BA171A330E0600DCC16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E61BA181A330E0600DCC16F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,20 +79,26 @@
 		6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IT_EbooksTests.m; sourceTree = "<group>"; };
 		6E6522EF1A5C4721009E2AA4 /* BookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
 		6E6522F01A5C4721009E2AA4 /* BookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCell.m; sourceTree = "<group>"; };
-		6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		6E7769B81A616EEF00ABEF55 /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		6E7769BD1A6197D900ABEF55 /* ebooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ebooks.json; sourceTree = "<group>"; };
 		6E7769C21A62CC0000ABEF55 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
 		6E7769C31A62CC0000ABEF55 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
-		6EA426331A330F3300E058A4 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
-		6EA426341A330F3300E058A4 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
-		6EA426351A330F3300E058A4 /* Books.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Books.h; sourceTree = "<group>"; };
-		6EA426361A330F3300E058A4 /* Books.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Books.m; sourceTree = "<group>"; };
-		6EA4263B1A34C4C100E058A4 /* HttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
-		6EA4263C1A34C4C100E058A4 /* HttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		6E8A4DC71B4491DC005A03F3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6EA426331A330F3300E058A4 /* IBSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSAPIClient.h; sourceTree = "<group>"; };
+		6EA426341A330F3300E058A4 /* IBSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSAPIClient.m; sourceTree = "<group>"; };
+		6EA426351A330F3300E058A4 /* IBSBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSBooks.h; sourceTree = "<group>"; };
+		6EA426361A330F3300E058A4 /* IBSBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSBooks.m; sourceTree = "<group>"; };
+		6EA4263B1A34C4C100E058A4 /* IBSHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSHttpClient.h; sourceTree = "<group>"; };
+		6EA4263C1A34C4C100E058A4 /* IBSHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSHttpClient.m; sourceTree = "<group>"; };
 		6EA426401A34C7FF00E058A4 /* BookDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailsVC.h; sourceTree = "<group>"; };
 		6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailsVC.m; sourceTree = "<group>"; };
+		6EB549521A841E65006A70B1 /* IBSServerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSServerConfiguration.h; sourceTree = "<group>"; };
+		6EB549531A841E65006A70B1 /* IBSServerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSServerConfiguration.m; sourceTree = "<group>"; };
+		6EB549561A8421B4006A70B1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6EB549571A8421B4006A70B1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6EB5495A1A8421CC006A70B1 /* IBSReachabilityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSReachabilityFactory.h; sourceTree = "<group>"; };
+		6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSReachabilityFactory.m; sourceTree = "<group>"; };
 		A9EA6685D5D50A2E779E3CD8 /* Pods-IT-EbooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-EbooksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-Ebooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IT-EbooksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7769B71A616AAE00ABEF55 /* Crashlytics.framework in Frameworks */,
+				6E8A4DC81B4491DC005A03F3 /* libxml2.dylib in Frameworks */,
 				2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,8 +148,10 @@
 		6E61BA151A330E0600DCC16F /* IT-Ebooks */ = {
 			isa = PBXGroup;
 			children = (
+				6E8A4DBC1B44918A005A03F3 /* Helpers */,
 				6E7769BC1A61727800ABEF55 /* Categories */,
 				6EA426321A330F3300E058A4 /* APIClient */,
+				6EB549511A8402B4006A70B1 /* Reachability */,
 				6E61BA1A1A330E0600DCC16F /* AppDelegate.h */,
 				6E61BA1B1A330E0600DCC16F /* AppDelegate.m */,
 				6E7769C21A62CC0000ABEF55 /* CacheManager.h */,
@@ -150,6 +173,8 @@
 		6E61BA161A330E0600DCC16F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E30877F1BD2757A002FF1D7 /* content-wrapper.html */,
+				6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */,
 				6E61BA171A330E0600DCC16F /* Info.plist */,
 				6E61BA181A330E0600DCC16F /* main.m */,
 				6E7769BD1A6197D900ABEF55 /* ebooks.json */,
@@ -183,14 +208,25 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		6E8A4DBC1B44918A005A03F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6E3087851BD27F8C002FF1D7 /* WebsiteIndexParser.h */,
+				6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6EA426321A330F3300E058A4 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
 				6EA4263F1A34C79700E058A4 /* Model */,
-				6EA426331A330F3300E058A4 /* APIClient.h */,
-				6EA426341A330F3300E058A4 /* APIClient.m */,
-				6EA4263B1A34C4C100E058A4 /* HttpClient.h */,
-				6EA4263C1A34C4C100E058A4 /* HttpClient.m */,
+				6EA426331A330F3300E058A4 /* IBSAPIClient.h */,
+				6EA426341A330F3300E058A4 /* IBSAPIClient.m */,
+				6EA4263B1A34C4C100E058A4 /* IBSHttpClient.h */,
+				6EA4263C1A34C4C100E058A4 /* IBSHttpClient.m */,
+				6EB549521A841E65006A70B1 /* IBSServerConfiguration.h */,
+				6EB549531A841E65006A70B1 /* IBSServerConfiguration.m */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -198,10 +234,21 @@
 		6EA4263F1A34C79700E058A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6EA426351A330F3300E058A4 /* Books.h */,
-				6EA426361A330F3300E058A4 /* Books.m */,
+				6EA426351A330F3300E058A4 /* IBSBooks.h */,
+				6EA426361A330F3300E058A4 /* IBSBooks.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6EB549511A8402B4006A70B1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6EB549561A8421B4006A70B1 /* Reachability.h */,
+				6EB549571A8421B4006A70B1 /* Reachability.m */,
+				6EB5495A1A8421CC006A70B1 /* IBSReachabilityFactory.h */,
+				6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		A6D19BD07FD07325C4F9555E /* Pods */ = {
@@ -218,7 +265,7 @@
 		E41E7C2917848B55834CD574 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E7769B61A616AAE00ABEF55 /* Crashlytics.framework */,
+				6E8A4DC71B4491DC005A03F3 /* libxml2.dylib */,
 				459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */,
 				B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */,
 			);
@@ -237,7 +284,8 @@
 				6E61BA101A330E0600DCC16F /* Frameworks */,
 				6E61BA111A330E0600DCC16F /* Resources */,
 				06B77AFAB78B5301FA1486DC /* Copy Pods Resources */,
-				6E7769B51A616A7400ABEF55 /* ShellScript */,
+				05B62D48A4CA57A1A184E3C4 /* Embed Pods Frameworks */,
+				6ED55C6C1BD295D500EA083C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,6 +305,7 @@
 				6E61BA291A330E0600DCC16F /* Frameworks */,
 				6E61BA2A1A330E0600DCC16F /* Resources */,
 				D7305345250BBEB84A2AC397 /* Copy Pods Resources */,
+				1E77E8FFD6179874EA6AEA17 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +328,7 @@
 				TargetAttributes = {
 					6E61BA121A330E0600DCC16F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = XBSJ39MYWW;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -318,7 +368,9 @@
 				6E61BA221A330E0600DCC16F /* Main.storyboard in Resources */,
 				6E61BA271A330E0600DCC16F /* LaunchScreen.xib in Resources */,
 				6E7769C01A619BFD00ABEF55 /* ebooks.json in Resources */,
+				6E3087811BD277C7002FF1D7 /* content-wrapper.html in Resources */,
 				6E61BA241A330E0600DCC16F /* Images.xcassets in Resources */,
+				6E3087831BD279FC002FF1D7 /* it-ebooks-index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,13 +378,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3087801BD2757A002FF1D7 /* content-wrapper.html in Resources */,
 				6E7769C11A619BFF00ABEF55 /* ebooks.json in Resources */,
+				6E3087841BD27D47002FF1D7 /* it-ebooks-index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05B62D48A4CA57A1A184E3C4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		06B77AFAB78B5301FA1486DC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,7 +417,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E7769B51A616A7400ABEF55 /* ShellScript */ = {
+		1E77E8FFD6179874EA6AEA17 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ED55C6C1BD295D500EA083C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run ab73dc3c453231c8f2badc031b8e8a6a76247f70 5276528184073c4918813c520908cd3a63c64da148a5b23d0ae7d2da6e1f91e3";
+			shellScript = "${PODS_ROOT}/Fabric/Fabric.framework/run ab73dc3c453231c8f2badc031b8e8a6a76247f70 5276528184073c4918813c520908cd3a63c64da148a5b23d0ae7d2da6e1f91e3";
 		};
 		876D86BEF710374313719A61 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -414,15 +498,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6522F11A5C4721009E2AA4 /* BookCell.m in Sources */,
+				6E3087871BD27F8C002FF1D7 /* WebsiteIndexParser.m in Sources */,
 				6EA426421A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
-				6EA4263D1A34C4C100E058A4 /* HttpClient.m in Sources */,
+				6EB549541A841E65006A70B1 /* IBSServerConfiguration.m in Sources */,
+				6EA4263D1A34C4C100E058A4 /* IBSHttpClient.m in Sources */,
 				6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */,
 				6E7769BA1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */,
-				6EA426391A330F3300E058A4 /* Books.m in Sources */,
+				6EA426391A330F3300E058A4 /* IBSBooks.m in Sources */,
 				6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */,
 				6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */,
 				6E61BA191A330E0600DCC16F /* main.m in Sources */,
-				6EA426371A330F3300E058A4 /* APIClient.m in Sources */,
+				6EB549581A8421B4006A70B1 /* Reachability.m in Sources */,
+				6EB5495C1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */,
+				6EA426371A330F3300E058A4 /* IBSAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,14 +518,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB549551A841E65006A70B1 /* IBSServerConfiguration.m in Sources */,
 				6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */,
 				6EA426431A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
-				6EA4263A1A330F3300E058A4 /* Books.m in Sources */,
+				6EB5495D1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */,
+				6EA4263A1A330F3300E058A4 /* IBSBooks.m in Sources */,
+				6EB549591A8421B4006A70B1 /* Reachability.m in Sources */,
 				6E61BA331A330E0600DCC16F /* IT_EbooksTests.m in Sources */,
-				6EA4263E1A34C4C100E058A4 /* HttpClient.m in Sources */,
+				6EA4263E1A34C4C100E058A4 /* IBSHttpClient.m in Sources */,
 				6E7769BB1A616EEF00ABEF55 /* UIImageView+Networking.m in Sources */,
 				6E6522F21A5C4721009E2AA4 /* BookCell.m in Sources */,
-				6EA426381A330F3300E058A4 /* APIClient.m in Sources */,
+				6EA426381A330F3300E058A4 /* IBSAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,9 +596,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -540,8 +638,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-lxml2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -553,14 +658,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JGProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/OHHTTPStubs\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "22861c9e-2654-4dc7-8990-f5a10e367745";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -570,14 +683,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JGProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/OHHTTPStubs\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "22861c9e-2654-4dc7-8990-f5a10e367745";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
