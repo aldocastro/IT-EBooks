@@ -7,8 +7,8 @@
 //
 
 #import "SearchResultsVC.h"
-#import "APIClient.h"
-#import "Books.h"
+#import "IBSAPIClient.h"
+#import "IBSBooks.h"
 #import "BookCell.h"
 #import "BookDetailsVC.h"
 #import <JGProgressHUD/JGProgressHUD.h>
@@ -41,8 +41,7 @@ static NSString *CellIdentifier = @"BookCell";
 
 - (void)prepareSearchBar {
     if (!_searchBar) {
-        CGFloat searchBarBoundsY =  self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, searchBarBoundsY, [UIScreen mainScreen].bounds.size.width, 44)];
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44)];
         _searchBar.searchBarStyle       = UISearchBarStyleDefault;
         _searchBar.tintColor            = [UIColor grayColor];
         _searchBar.barTintColor         = [UIColor blueColor];
@@ -69,6 +68,7 @@ static NSString *CellIdentifier = @"BookCell";
     }];
     [_searchBar resignFirstResponder];
     [self.view removeGestureRecognizer:tapGestureRecognizer];
+    tapGestureRecognizer = nil;
 }
 
 - (void)toogleHUD {
@@ -95,7 +95,7 @@ static NSString *CellIdentifier = @"BookCell";
     NSLog(@"%s", __PRETTY_FUNCTION__);
     if (query && query.length>0) {
         [self toogleHUD];
-        [[APIClient shareInstance] searchByQuery:query onPage:currentPage onSuccess:^(BookSearch *result) {
+        [[IBSAPIClient shareInstance] searchByQuery:query onPage:currentPage onSuccess:^(IBSBookSearch *result) {
             [self toogleHUD];
             if ([result.Total isEqualToString:@"0"]) {
                 [self showHUDWithMessage:@"No results found."];
@@ -115,7 +115,7 @@ static NSString *CellIdentifier = @"BookCell";
 - (void)addBooksFromSet:(NSSet *)bookSet {
     if (bookSet && bookSet.count>0) {
         NSLog(@"bookSet count: %li", (long)bookSet.count);
-        for (Books *cBook in bookSet) {
+        for (IBSBooks *cBook in bookSet) {
             if (![books containsObject:cBook]) {
                 [books addObject:cBook];
             }
@@ -131,7 +131,7 @@ static NSString *CellIdentifier = @"BookCell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"openDetails"]) {
         // prepare Book oject to display
-        Books *book = ((BookCell*)sender).book;
+        IBSBooks *book = ((BookCell*)sender).book;
         BookDetailsVC *detailVC = (BookDetailsVC *)segue.destinationViewController;
         detailVC.bookID = book.ID;
     }
