@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class BookSearch;
-@class BookDetails;
-@interface APIClient : NSObject
-+ (APIClient *)shareInstance;
-- (void)searchByQuery:(NSString *)query onSuccess:(void (^)(BookSearch *results))success onFailure:(void (^)(NSError *error))failure;
-- (void)searchByQuery:(NSString *)query onPage:(int)page onSuccess:(void (^)(BookSearch *books))success onFailure:(void (^)(NSError *error))failure;
-- (void)searchBookId:(NSString *)book_id onSuccess:(void(^)(BookDetails *book))success onFailure:(void(^)(NSError *error))failure;
+@class IBSBookSearch;
+@class IBSBookDetails;
+@interface IBSAPIClient : NSObject
++ (IBSAPIClient *)shareInstance;
+- (void)searchByQuery:(NSString *)query onSuccess:(void (^)(IBSBookSearch *results))success onFailure:(void (^)(NSError *error))failure;
+- (void)searchByQuery:(NSString *)query onPage:(int)page onSuccess:(void (^)(IBSBookSearch *books))success onFailure:(void (^)(NSError *error))failure;
+- (void)searchBookId:(NSString *)book_id onSuccess:(void(^)(IBSBookDetails *book))success onFailure:(void(^)(NSError *error))failure;
 @end

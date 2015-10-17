@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Aldo Castro. All rights reserved.
 //
 
-#import "IBServerConfiguration.h"
+#import "IBSServerConfiguration.h"
 
-@implementation IBServerConfiguration
+@implementation IBSServerConfiguration
 
 @end

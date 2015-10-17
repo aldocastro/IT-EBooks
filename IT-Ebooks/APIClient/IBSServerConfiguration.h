@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface IBServerConfiguration : NSObject
+@interface IBSServerConfiguration : NSObject
 
 @end

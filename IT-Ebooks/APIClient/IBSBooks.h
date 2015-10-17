@@ -5,7 +5,7 @@
 
 @import Foundation;
 
-@interface BookDetails : NSObject
+@interface IBSBookDetails : NSObject
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *ISBN;
 @property (nonatomic, strong) NSString *Title;
@@ -22,7 +22,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error;
 @end
 
-@interface Books : NSObject
+@interface IBSBooks : NSObject
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *ISBN; // optional
 @property (nonatomic, strong) NSString *Title;
@@ -32,7 +32,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error;
 @end
 
-@interface BookSearch : NSObject
+@interface IBSBookSearch : NSObject
 @property (nonatomic, strong) NSSet *Books;
 @property (nonatomic, strong) NSError *Error;
 @property (nonatomic, strong) NSString *Total;

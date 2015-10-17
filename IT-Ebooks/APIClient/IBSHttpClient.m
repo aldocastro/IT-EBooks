@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Aldo Castro. All rights reserved.
 //
 
-#import "HttpClient.h"
+#import "IBSHttpClient.h"
 
-@interface HttpClient() {
+@interface IBSHttpClient() {
     NSString *_baseURL;
     NSURLSession *_session;
 }
 
 @end
 
-@implementation HttpClient
+@implementation IBSHttpClient
 @synthesize baseURL = _baseURL;
 
 - (instancetype)initWithBaseURL:(NSString *)baseUrl {
@@ -53,7 +53,7 @@
             if (json && !jsonError) {
                 NSLog(@"json: %@", json);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                   success(json);
+                    success(json);
                 });
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -68,5 +68,20 @@
     }] resume];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
+
+
+//- (void)updateReachability
+//{
+//    __block BOOL isAvailable;
+//    UIDevice *device = [UIDevice currentDevice];
+//    NSOperationQueue *checkAvailability = [[NSOperationQueue alloc] init];
+//    [checkAvailability addOperationWithBlock:^{
+//        isAvailable = [device networkAvailable] || [device activeWLAN] || [device activeWWAN];
+//    }];
+//    [checkAvailability waitUntilAllOperationsAreFinished];
+//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//        reachability = isAvailable;
+//    }];
+//}
 
 @end

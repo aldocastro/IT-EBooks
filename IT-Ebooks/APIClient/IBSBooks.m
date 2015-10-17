@@ -3,9 +3,9 @@
 // Copyright (c) 2014 Aldo Castro. All rights reserved.
 //
 
-#import "Books.h"
+#import "IBSBooks.h"
 
-@implementation BookDetails
+@implementation IBSBookDetails
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error {
     if (dictionary) {
         if (dictionary[@"ID"] && [dictionary[@"ID"] isKindOfClass:[NSNumber class]]) {
@@ -54,7 +54,7 @@
 }
 @end
 
-@implementation BookSearch
+@implementation IBSBookSearch
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error {
     if (dictionary) {
         if (dictionary[@"Books"] && [dictionary[@"Books"] isKindOfClass:[NSArray class]]) {
@@ -82,7 +82,7 @@
     if (array && [array count] > 0) {
         NSMutableSet *bookSet = [NSMutableSet set];
         for (NSDictionary *bookDict in array) {
-            Books *book = [[Books alloc] initWithDictionary:bookDict error:NULL];
+            IBSBooks *book = [[IBSBooks alloc] initWithDictionary:bookDict error:NULL];
             if (book) {
                 [bookSet addObject:book];
             }
@@ -93,7 +93,7 @@
 }
 @end
 
-@implementation Books
+@implementation IBSBooks
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error {
     if (dictionary) {
         if (dictionary[@"ID"] && [dictionary[@"ID"] isKindOfClass:[NSNumber class]]) {
@@ -120,10 +120,26 @@
     return self;
 }
 
-- (BOOL)isEqual:(Books *)object {
-    if (object && [object isKindOfClass:[Books class]]) {
+- (NSUInteger)hash {
+    NSUInteger idHashed = [_ID hash];
+    NSUInteger isbnHashed = [_ISBN hash];
+    NSUInteger titleHashed = [_Title hash];
+    return idHashed ^ isbnHashed ^ titleHashed;
+}
+
+- (BOOL)isEqual:(IBSBooks *)object {
+    if (self == object) {
+        return  YES;
+    }
+    
+    if ([self hash] == [object hash]) {
+        return YES;
+    }
+    
+    if (object && [object isKindOfClass:[IBSBooks class]]) {
         return [self.ID isEqual:object.ID] && [self.ISBN isEqual:object.ISBN] && [self.Title isEqual:object.Title];
     }
+    
     return NO;
 }
 
