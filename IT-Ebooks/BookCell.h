@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Books;
+@class IBSBooks;
 @interface BookCell : UICollectionViewCell
-@property (nonatomic, strong) Books *book;
+@property (nonatomic, strong) IBSBooks *book;
 @property (nonatomic, weak) IBOutlet UIImageView *picture;
-- (void)setCellWithBook:(Books *)book;
+- (void)setCellWithBook:(IBSBooks *)book;
 @end

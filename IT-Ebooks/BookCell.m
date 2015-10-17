@@ -7,11 +7,11 @@
 //
 
 #import "BookCell.h"
-#import "Books.h"
+#import "IBSBooks.h"
 #import "UIImageView+Networking.h"
 
 @implementation BookCell
-- (void)setCellWithBook:(Books *)book {
+- (void)setCellWithBook:(IBSBooks *)book {
     if (book) {
         self.book = book;
         [self.picture setImageWithURL:self.book.Image placeholderImage:[UIImage imageNamed:@"placeholder-small"]];

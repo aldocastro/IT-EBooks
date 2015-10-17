@@ -7,8 +7,8 @@
 //
 
 #import "BookDetailsVC.h"
-#import "Books.h"
-#import "APIClient.h"
+#import "IBSBooks.h"
+#import "IBSAPIClient.h"
 #import "UIImageView+Networking.h"
 
 //  TODO: prepare view when there is no data to show.
@@ -19,7 +19,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[APIClient shareInstance] searchBookId:_bookID onSuccess:^(BookDetails *book) {
+    [[IBSAPIClient shareInstance] searchBookId:_bookID onSuccess:^(IBSBookDetails *book) {
         if (book && !book.Error) {
             _book = book;
             [self updateUI];

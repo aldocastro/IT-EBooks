@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class BookDetails;
+@class IBSBookDetails;
 @interface BookDetailsVC : UIViewController {
-    BookDetails *_book;
+    IBSBookDetails *_book;
 }
 @property (nonatomic, weak) UIImage *placeholder;
 @property (nonatomic, weak) IBOutlet UIImageView *book_picture;
