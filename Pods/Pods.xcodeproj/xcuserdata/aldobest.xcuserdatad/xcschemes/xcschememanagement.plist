@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-IT-Ebooks-JGProgressHUD.xcscheme</key>
+		<key>JGProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OHHTTPStubs.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -14,17 +19,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-IT-EbooksTests-JGProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-IT-EbooksTests-OHHTTPStubs.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IT-EbooksTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>hpple.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>083358C107DAC8B65292A056</key>
+		<key>045D3251CE3EFD09123EE341B544522A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2276EC50F910D81E745BC2C9</key>
+		<key>3116F685117B044E8E119EA475203BA9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3334D3A68C1D434635A6837D</key>
+		<key>5CF8B4083CB9258E6D0B62AF164B625B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4448382C4BE5992F15240A55</key>
+		<key>BA250BDE05647A8E5AE0B5FB0421E3CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C4F799E9F7AC25642A5F5F7</key>
+		<key>F968D8E89494AC780D5D9B2F0437ECB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

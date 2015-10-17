@@ -6,59 +6,18 @@
 //  Copyright (c) 2014 Jonas Gessner. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "JGProgressHUD-Defines.h"
+
+#import "JGProgressHUDAnimation.h"
+#import "JGProgressHUDFadeAnimation.h"
+#import "JGProgressHUDFadeZoomAnimation.h"
 
 #import "JGProgressHUDIndicatorView.h"
-#import "JGProgressHUDAnimation.h"
-
-/**
- Positions of the HUD.
- */
-typedef NS_ENUM(NSUInteger, JGProgressHUDPosition) {
-    /** Center position. */
-    JGProgressHUDPositionCenter = 0,
-    /** Top left position. */
-    JGProgressHUDPositionTopLeft,
-    /** Top center position. */
-    JGProgressHUDPositionTopCenter,
-    /** Top right position. */
-    JGProgressHUDPositionTopRight,
-    /** Center left position. */
-    JGProgressHUDPositionCenterLeft,
-    /** Center right position. */
-    JGProgressHUDPositionCenterRight,
-    /** Bottom left position. */
-    JGProgressHUDPositionBottomLeft,
-    /** Bottom center position. */
-    JGProgressHUDPositionBottomCenter,
-    /** Bottom right position. */
-    JGProgressHUDPositionBottomRight
-};
-
-/**
- Appearance styles of the HUD.
- */
-typedef NS_ENUM(NSUInteger, JGProgressHUDStyle) {
-    /** Extra light HUD with dark elements. */
-    JGProgressHUDStyleExtraLight = 0,
-    /** Light HUD with dark elemets. */
-    JGProgressHUDStyleLight,
-    /** Dark HUD with light elements. */
-    JGProgressHUDStyleDark
-};
-
-/**
- Interaction types.
- */
-typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
-    /** Block all touches. No interaction behin the HUD is possible. */
-    JGProgressHUDInteractionTypeBlockAllTouches = 0,
-    /** Block touches on the HUD view. */
-    JGProgressHUDInteractionTypeBlockTouchesOnHUDView,
-    /** Block no touches. */
-    JGProgressHUDInteractionTypeBlockNoTouches
-};
+#import "JGProgressHUDErrorIndicatorView.h"
+#import "JGProgressHUDSuccessIndicatorView.h"
+#import "JGProgressHUDRingIndicatorView.h"
+#import "JGProgressHUDPieIndicatorView.h"
+#import "JGProgressHUDIndeterminateIndicatorView.h"
 
 @class JGProgressHUD;
 
@@ -93,23 +52,26 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
 @end
 
 /**
- A HUD view to indicate progress, success, error, warnings or other notifications to the user.
- @note Remember to call every method from the main thread! UIKit = always main thread!
+ A HUD to indicate progress, success, error, warnings or other notifications to the user.
+ @note Remember to call every method from the main thread! UIKit => main thread!
  @attention This applies only to iOS 8 and higher: You may not add JGProgressHUD to a view which has an alpha value < 1.0 or to a view which is a subview of a view with an alpha value < 1.0.
  */
 @interface JGProgressHUD : UIView
 
 /**
- Always initialize JGProgressHUD using this method or it's convenience method @c progressHUDWithStyle:.
+ Designated initializer.
  @param style The appearance style of the HUD.
  */
 - (instancetype)initWithStyle:(JGProgressHUDStyle)style;
 
 /**
- Convenience method to initialize a new HUD.
+ Convenience initializer.
  @param style The appearance style of the HUD.
  */
 + (instancetype)progressHUDWithStyle:(JGProgressHUDStyle)style;
+
+
+
 
 /**
  The view in which the HUD is presented.
@@ -250,10 +212,14 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
  */
 - (void)setProgress:(float)progress animated:(BOOL)animated;
 
+/**
+ Specifies a minimum time that the HUD will be on-screen. Useful to prevent the HUD from flashing quickly on the screen when indeterminate tasks complete more quickly than expected.
+ 
+ @b Default: 0.0.
+ */
+@property (nonatomic, assign) NSTimeInterval minimumDisplayTime;
 
-/////////////
-// Showing //
-/////////////
+
 
 
 /**
@@ -287,12 +253,6 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
 
 
 
-////////////////
-// Dismissing //
-////////////////
-
-
-
 /**
  Dismisses the HUD animated.
  */
@@ -317,8 +277,8 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
  */
 - (void)dismissAfterDelay:(NSTimeInterval)delay animated:(BOOL)animated;
 
-
 @end
+
 
 
 
@@ -330,7 +290,6 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
  */
 + (NSArray *)allProgressHUDsInView:(UIView *)view;
 
-
 /**
  @param view The view to return all visible progress HUDs for.
  @return All visible progress HUDs in the view and its subviews.
@@ -338,27 +297,3 @@ typedef NS_ENUM(NSUInteger, JGProgressHUDInteractionType) {
 + (NSArray *)allProgressHUDsInViewHierarchy:(UIView *)view;
 
 @end
-
-
-
-@interface JGProgressHUD (Deprecated)
-
-/**
- @warning Deprecated. Use @c indicatorView.
- */
-@property (nonatomic, strong) JGProgressHUDIndicatorView *progressIndicatorView DEPRECATED_ATTRIBUTE;
-/**
- @warning Deprecated this no longer has any effect. To show no indicator view set @c indicatorView to @c nil, otherwise assign an indicator view to @c indicatorView (By default @c indicatorView is @c JGProgressHUDIndeterminateIndicatorView).
- @sa indicatorView.
- */
-@property (nonatomic, assign) BOOL useProgressIndicatorView DEPRECATED_ATTRIBUTE;
-
-@end
-
-
-/**
- Macro for safe floating point comparison (for internal use in JGProgressHUD).
- */
-#ifndef fequal
-#define fequal(a,b) (fabs((a) - (b)) < FLT_EPSILON)
-#endif

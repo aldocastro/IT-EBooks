@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jonas Gessner. All rights reserved.
 //  
 
-#import "JGProgressHUD.h"
+#import "JGProgressHUD-Defines.h"
 #import "JGProgressHUDIndicatorView.h"
 
 @interface JGProgressHUDRingIndicatorView : JGProgressHUDIndicatorView
@@ -15,6 +15,9 @@
  Initializes the indicator view and sets the correct color to match the HUD style.
  */
 - (instancetype)initWithHUDStyle:(JGProgressHUDStyle)style;
+
+
+
 
 /**
  Background color of the ring.
