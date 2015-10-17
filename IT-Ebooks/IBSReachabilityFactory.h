@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class Reachability;
+
 @interface IBSReachabilityFactory : NSObject
+
++ (IBSReachabilityFactory *)sharedInstance;
+- (Reachability *)reachability;
 
 @end
