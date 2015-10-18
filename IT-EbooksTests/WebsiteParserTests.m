@@ -7,33 +7,91 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "WebsiteIndexParser.h"
+#import "IBSBooks.h"
+
 
 @interface WebsiteParserTests : XCTestCase
-
+@property (nonatomic, strong) WebsiteIndexParser *parser;
 @end
+
 
 @implementation WebsiteParserTests
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.parser = [[WebsiteIndexParser alloc] initWithLocalHTMLFileName:@"it-ebooks-index"];
 }
 
-- (void)tearDown {
+- (void)tearDown
+{
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)test_1_returnsSectionNames
+{
+    XCTAssertNotNil(self.parser);
+    NSArray *sectionNames = [self.parser getSectionNames];
+    XCTAssertNotNil(sectionNames);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)test_2_sectionNamesAreCorrectlyReturned
+{
+    XCTAssertNotNil(self.parser);
+    NSArray *sectionNames = [self.parser getSectionNames];
+    XCTAssertNotNil(sectionNames);
+    
+    for (NSString *name in sectionNames)
+    {
+        if ([name isEqualToString:@"Top Download eBooks"] ||
+            [name isEqualToString:@"Last Upload eBooks"] ||
+            [name isEqualToString:@"New eBooks"])
+        {
+            XCTAssert(YES, "returned the correct known section names");
+        }
+        else
+        {
+            XCTAssert(NO, "returned section names do not match with known sections");
+        }
+    }
+}
+
+- (void)test_3_parseTopDownloads_returnsTheCorrectDictionary
+{
+    XCTAssertNotNil(self.parser);
+    NSArray *topDownloads = [self.parser getTopDownloads];
+    XCTAssertNotNil(topDownloads);
+    
+    IBSBookSimple *firstBook = topDownloads.firstObject;
+    XCTAssertNotNil(firstBook.Image);
+    XCTAssertNotNil(firstBook.Title);
+    XCTAssertNotNil(firstBook.DetailsURL);
+}
+
+- (void)test_4_parseLastUpload_returnsTheCorrectDictionary
+{
+    XCTAssertNotNil(self.parser);
+    NSArray *lastUpload = [self.parser getLastUpload];
+    XCTAssertNotNil(lastUpload);
+    
+    IBSBookSimple *firstBook = lastUpload.firstObject;
+    XCTAssertNotNil(firstBook.Image);
+    XCTAssertNotNil(firstBook.Title);
+    XCTAssertNotNil(firstBook.DetailsURL);
+}
+
+- (void)test_5_parseNewEbooks_returnsTheCorrectDictionary
+{
+    XCTAssertNotNil(self.parser);
+    NSArray *newEbooks = [self.parser getNewEbooks];
+    XCTAssertNotNil(newEbooks);
+    
+    IBSBookSimple *firstBook = newEbooks.firstObject;
+    XCTAssertNotNil(firstBook.Image);
+    XCTAssertNotNil(firstBook.Title);
+    XCTAssertNotNil(firstBook.DetailsURL);
 }
 
 @end
