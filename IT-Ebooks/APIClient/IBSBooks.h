@@ -40,3 +40,10 @@
 @property (nonatomic, strong) NSNumber *Time;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error;
 @end
+
+@interface IBSBookSimple : NSObject
+@property (nonatomic, strong) NSString *Title;
+@property (nonatomic, strong) NSURL *Image;
+@property (nonatomic, strong) NSURL *DetailsURL;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error;
+@end
