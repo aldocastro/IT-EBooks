@@ -43,6 +43,7 @@
 		6EB549591A8421B4006A70B1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549571A8421B4006A70B1 /* Reachability.m */; };
 		6EB5495C1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */; };
 		6EB5495D1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */; };
+		6ED55C6E1BD29E9900EA083C /* WebsiteParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55C6D1BD29E9900EA083C /* WebsiteParserTests.m */; settings = {ASSET_TAGS = (); }; };
 		99989535BA46DD18534FA4A6 /* libPods-IT-EbooksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		6EB549571A8421B4006A70B1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		6EB5495A1A8421CC006A70B1 /* IBSReachabilityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSReachabilityFactory.h; sourceTree = "<group>"; };
 		6EB5495B1A8421CC006A70B1 /* IBSReachabilityFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSReachabilityFactory.m; sourceTree = "<group>"; };
+		6ED55C6D1BD29E9900EA083C /* WebsiteParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebsiteParserTests.m; sourceTree = "<group>"; };
 		A9EA6685D5D50A2E779E3CD8 /* Pods-IT-EbooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-EbooksTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IT-EbooksTests/Pods-IT-EbooksTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5FD883BD74723042D79C788 /* Pods-IT-Ebooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IT-Ebooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IT-Ebooks/Pods-IT-Ebooks.debug.xcconfig"; sourceTree = "<group>"; };
 		B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IT-EbooksTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				6E61BA321A330E0600DCC16F /* IT_EbooksTests.m */,
+				6ED55C6D1BD29E9900EA083C /* WebsiteParserTests.m */,
 				6E61BA301A330E0600DCC16F /* Supporting Files */,
 			);
 			path = "IT-EbooksTests";
@@ -520,6 +523,7 @@
 			files = (
 				6EB549551A841E65006A70B1 /* IBSServerConfiguration.m in Sources */,
 				6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */,
+				6ED55C6E1BD29E9900EA083C /* WebsiteParserTests.m in Sources */,
 				6EA426431A34C7FF00E058A4 /* BookDetailsVC.m in Sources */,
 				6EB5495D1A8421CC006A70B1 /* IBSReachabilityFactory.m in Sources */,
 				6EA4263A1A330F3300E058A4 /* IBSBooks.m in Sources */,
