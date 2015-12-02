@@ -7,11 +7,13 @@
 //
 
 #import "IBSHttpClient.h"
+#import "IBSReachabilityManager.h"
 
-@interface IBSHttpClient() {
-    NSString *_baseURL;
-    NSURLSession *_session;
-}
+@interface IBSHttpClient()
+
+@property(nonatomic, strong) NSString *baseURL;
+@property(nonatomic, strong) NSURLSession *session;
+@property(nonatomic, strong) IBSReachabilityManager *reachabilityManager;
 
 @end
 
@@ -22,6 +24,7 @@
     self = [super init];
     if (self) {
         _baseURL = baseUrl;
+        _reachabilityManager = [IBSReachabilityManager sharedInstance];
         NSURLSessionConfiguration *_configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         [_configuration setRequestCachePolicy:NSURLRequestReloadIgnoringCacheData];
         _configuration.HTTPAdditionalHeaders = @{@"Accept": @"application/json",
@@ -38,50 +41,40 @@
 }
 
 - (NSURL *)escapedTaskURLWithPath:(NSString *)path {
-    NSString *escapedString = [[NSString stringWithFormat:@"%@%@",_baseURL, path] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *escapedString = [[NSString stringWithFormat:@"%@%@",self.baseURL, path] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return [NSURL URLWithString:escapedString];
 }
 
 - (void)GET:(NSString *)path withSuccess:(void(^)(NSDictionary *json))success onFailure:(void(^)(NSError *error))failure {
-    NSURL *escapedURL = [self escapedTaskURLWithPath:path];
-    NSLog(@"escaped path: %@", escapedURL);
-    [[_session dataTaskWithURL:escapedURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        if (!error) {
-            NSError *jsonError = nil;
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-            if (json && !jsonError) {
-                NSLog(@"json: %@", json);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    success(json);
-                });
+    if ([self.reachabilityManager reachabilityStatus] == IBSReachabilityStatusReachable)
+    {
+        NSURL *escapedURL = [self escapedTaskURLWithPath:path];
+        NSLog(@"escaped path: %@", escapedURL);
+        [[self.session dataTaskWithURL:escapedURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            if (!error) {
+                NSError *jsonError = nil;
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+                if (json && !jsonError) {
+                    NSLog(@"json: %@", json);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        success(json);
+                    });
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        failure(jsonError);
+                    });
+                }
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    failure(jsonError);
+                    failure(error);
                 });
             }
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                failure(error);
-            });
-        }
-    }] resume];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        }] resume];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    } else {
+        failure([NSError errorWithDomain:@"UnreachableNetwork" code:10000 userInfo:@{@"":@""}]);
+    }
 }
-
-
-//- (void)updateReachability
-//{
-//    __block BOOL isAvailable;
-//    UIDevice *device = [UIDevice currentDevice];
-//    NSOperationQueue *checkAvailability = [[NSOperationQueue alloc] init];
-//    [checkAvailability addOperationWithBlock:^{
-//        isAvailable = [device networkAvailable] || [device activeWLAN] || [device activeWWAN];
-//    }];
-//    [checkAvailability waitUntilAllOperationsAreFinished];
-//    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//        reachability = isAvailable;
-//    }];
-//}
 
 @end

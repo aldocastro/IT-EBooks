@@ -9,11 +9,13 @@
 #import "IBSAPIClient.h"
 #import "IBSHttpClient.h"
 #import "IBSBooks.h"
+#import "IBSServerConfiguration.h"
+
 
 @interface IBSAPIClient ()
-{
-    IBSHttpClient *httpClient;
-}
+
+@property(nonatomic, strong) IBSHttpClient *httpClient;
+
 @end
 
 @implementation IBSAPIClient
@@ -22,7 +24,7 @@
 {
     if (self = [super init])
     {
-        httpClient = [[IBSHttpClient alloc] initWithBaseURL:@"http://it-ebooks-api.info/v1"];
+        _httpClient = [[IBSHttpClient alloc] initWithBaseURL:[IBSServerConfiguration serverUrl]];
     }
     return self;
 }
@@ -59,7 +61,7 @@
 - (void)searchByQuery:(NSString *)query onSuccess:(void (^)(IBSBookSearch *results))success onFailure:(void (^)(NSError *error))failure
 {
     NSString *urlPath = [NSString stringWithFormat:@"/search/%@", query];
-    [httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
+    [self.httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
         [self parseBooks:json onSuccess:success onFailure:failure];
     }     onFailure:failure];
 }
@@ -67,7 +69,7 @@
 - (void)searchByQuery:(NSString *)query onPage:(int)page onSuccess:(void (^)(IBSBookSearch *books))success onFailure:(void (^)(NSError *error))failure
 {
     NSString *urlPath = [NSString stringWithFormat:@"/search/%@/page/%i", query, page];
-    [httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
+    [self.httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
         [self parseBooks:json onSuccess:success onFailure:failure];
     }     onFailure:failure];
 }
@@ -75,7 +77,7 @@
 - (void)searchBookId:(NSString *)book_id onSuccess:(void (^)(IBSBookDetails *book))success onFailure:(void (^)(NSError *error))failure
 {
     NSString *urlPath = [NSString stringWithFormat:@"/book/%@", book_id];
-    [httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
+    [self.httpClient GET:urlPath withSuccess:^(NSDictionary *json) {
         success([[IBSBookDetails alloc] initWithDictionary:json error:NULL]);
     }     onFailure:failure];
 }
