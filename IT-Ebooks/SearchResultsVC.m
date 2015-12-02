@@ -105,6 +105,7 @@ static NSString *CellIdentifier = @"BookCell";
                 [self.collectionView reloadData];
             }
         } onFailure:^(NSError *error) {
+            currentPage--;
             [self toogleHUD];
             [self showHUDWithMessage:error.debugDescription];
             NSLog(@"error: %@", error.description);
