@@ -83,8 +83,8 @@
 		6E7769B81A616EEF00ABEF55 /* UIImageView+Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Networking.h"; sourceTree = "<group>"; };
 		6E7769B91A616EEF00ABEF55 /* UIImageView+Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Networking.m"; sourceTree = "<group>"; };
 		6E7769BD1A6197D900ABEF55 /* ebooks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ebooks.json; sourceTree = "<group>"; };
-		6E7769C21A62CC0000ABEF55 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
-		6E7769C31A62CC0000ABEF55 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
+		6E7769C21A62CC0000ABEF55 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheManager.h; path = ../CacheManager.h; sourceTree = "<group>"; };
+		6E7769C31A62CC0000ABEF55 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheManager.m; path = ../CacheManager.m; sourceTree = "<group>"; };
 		6E8A4DC71B4491DC005A03F3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		6EA426331A330F3300E058A4 /* IBSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSAPIClient.h; sourceTree = "<group>"; };
 		6EA426341A330F3300E058A4 /* IBSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSAPIClient.m; sourceTree = "<group>"; };
@@ -150,23 +150,16 @@
 		6E61BA151A330E0600DCC16F /* IT-Ebooks */ = {
 			isa = PBXGroup;
 			children = (
+				6E61BA1A1A330E0600DCC16F /* AppDelegate.h */,
+				6E61BA1B1A330E0600DCC16F /* AppDelegate.m */,
+				6E61BA201A330E0600DCC16F /* Main.storyboard */,
+				6E61BA231A330E0600DCC16F /* Images.xcassets */,
+				6E61BA251A330E0600DCC16F /* LaunchScreen.xib */,
 				6E8A4DBC1B44918A005A03F3 /* Helpers */,
 				6E7769BC1A61727800ABEF55 /* Categories */,
 				6EA426321A330F3300E058A4 /* APIClient */,
 				6EB549511A8402B4006A70B1 /* Reachability */,
-				6E61BA1A1A330E0600DCC16F /* AppDelegate.h */,
-				6E61BA1B1A330E0600DCC16F /* AppDelegate.m */,
-				6E7769C21A62CC0000ABEF55 /* CacheManager.h */,
-				6E7769C31A62CC0000ABEF55 /* CacheManager.m */,
-				6E6522EF1A5C4721009E2AA4 /* BookCell.h */,
-				6E6522F01A5C4721009E2AA4 /* BookCell.m */,
-				6E61BA1D1A330E0600DCC16F /* SearchResultsVC.h */,
-				6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */,
-				6EA426401A34C7FF00E058A4 /* BookDetailsVC.h */,
-				6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */,
-				6E61BA201A330E0600DCC16F /* Main.storyboard */,
-				6E61BA231A330E0600DCC16F /* Images.xcassets */,
-				6E61BA251A330E0600DCC16F /* LaunchScreen.xib */,
+				6E6A23851C0F9EBF004D4194 /* ViewControllers */,
 				6E61BA161A330E0600DCC16F /* Supporting Files */,
 			);
 			path = "IT-Ebooks";
@@ -202,6 +195,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6E6A23841C0F9EB0004D4194 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6E6522EF1A5C4721009E2AA4 /* BookCell.h */,
+				6E6522F01A5C4721009E2AA4 /* BookCell.m */,
+				6E61BA1D1A330E0600DCC16F /* SearchResultsVC.h */,
+				6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */,
+				6EA426401A34C7FF00E058A4 /* BookDetailsVC.h */,
+				6EA426411A34C7FF00E058A4 /* BookDetailsVC.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		6E6A23851C0F9EBF004D4194 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E6A23841C0F9EB0004D4194 /* Search */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		6E7769BC1A61727800ABEF55 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +228,8 @@
 		6E8A4DBC1B44918A005A03F3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6E7769C21A62CC0000ABEF55 /* CacheManager.h */,
+				6E7769C31A62CC0000ABEF55 /* CacheManager.m */,
 				6E3087851BD27F8C002FF1D7 /* WebsiteIndexParser.h */,
 				6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */,
 			);
