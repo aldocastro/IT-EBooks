@@ -10,4 +10,6 @@
 
 @interface IBSServerConfiguration : NSObject
 
++ (NSString *)serverUrl;
+
 @end
