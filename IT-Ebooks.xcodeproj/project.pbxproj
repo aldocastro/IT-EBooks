@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2B1E631FB48486C893EFF66D /* libPods-IT-Ebooks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459F66D3B9EFC6FC809B20A8 /* libPods-IT-Ebooks.a */; };
-		6E3087801BD2757A002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; settings = {ASSET_TAGS = (); }; };
-		6E3087811BD277C7002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; settings = {ASSET_TAGS = (); }; };
-		6E3087831BD279FC002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; settings = {ASSET_TAGS = (); }; };
-		6E3087841BD27D47002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; settings = {ASSET_TAGS = (); }; };
-		6E3087871BD27F8C002FF1D7 /* WebsiteIndexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */; settings = {ASSET_TAGS = (); }; };
+		6E3087801BD2757A002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; };
+		6E3087811BD277C7002FF1D7 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E30877F1BD2757A002FF1D7 /* content-wrapper.html */; };
+		6E3087831BD279FC002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; };
+		6E3087841BD27D47002FF1D7 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E3087821BD279FC002FF1D7 /* it-ebooks-index.html */; };
+		6E3087871BD27F8C002FF1D7 /* WebsiteIndexParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3087861BD27F8C002FF1D7 /* WebsiteIndexParser.m */; };
 		6E61BA191A330E0600DCC16F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA181A330E0600DCC16F /* main.m */; };
 		6E61BA1C1A330E0600DCC16F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1B1A330E0600DCC16F /* AppDelegate.m */; };
 		6E61BA1F1A330E0600DCC16F /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E61BA1E1A330E0600DCC16F /* SearchResultsVC.m */; };
@@ -43,7 +43,7 @@
 		6EB549591A8421B4006A70B1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB549571A8421B4006A70B1 /* Reachability.m */; };
 		6EB5495C1A8421CC006A70B1 /* IBSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityManager.m */; };
 		6EB5495D1A8421CC006A70B1 /* IBSReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5495B1A8421CC006A70B1 /* IBSReachabilityManager.m */; };
-		6ED55C6E1BD29E9900EA083C /* WebsiteParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55C6D1BD29E9900EA083C /* WebsiteParserTests.m */; settings = {ASSET_TAGS = (); }; };
+		6ED55C6E1BD29E9900EA083C /* WebsiteParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED55C6D1BD29E9900EA083C /* WebsiteParserTests.m */; };
 		99989535BA46DD18534FA4A6 /* libPods-IT-EbooksTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F54B74F3E0CBDFD651ED00 /* libPods-IT-EbooksTests.a */; };
 /* End PBXBuildFile section */
 
@@ -668,9 +668,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/JGProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/OHHTTPStubs\"",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
@@ -693,9 +691,7 @@
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/JGProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/OHHTTPStubs\"",
+					"$(inherited)",
 					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "IT-Ebooks/Info.plist";
