@@ -21,7 +21,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="J0v-u8-dx2"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="J0v-u8-dx2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ot-Nx-fth" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +105,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="0yW-mJ-sKF" secondAttribute="centerX" id="lI6-hN-zld"/>
                                     <constraint firstAttribute="centerY" secondItem="0yW-mJ-sKF" secondAttribute="centerY" id="mIP-98-IdP"/>
@@ -260,11 +260,11 @@
             </objects>
             <point key="canvasLocation" x="2961" y="-1492"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="l3U-Ut-pud">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ew6-ns-dP4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RU8-A5-8wa"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="RU8-A5-8wa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXq-mO-vfY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -294,17 +294,17 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="igo-a5-Gxo"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="igo-a5-Gxo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Kq-0o-wYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="-832"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="jtV-1q-LzX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElC-dh-gu5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="013-ut-QKt"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="013-ut-QKt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nkN-wm-q1Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
