@@ -5,5 +5,6 @@ before_install:
 	- brew install xctool
 
 script:
-  - xctoll -workspace IT-Ebooks.xcworkspace -scheme IT-Ebooks test
+	- xctool -workspace IT-Ebooks.xcworkspace -scheme IT-Ebooks
+  	- xctool test -workspace IT-Ebooks.xcworkspace -scheme IT-EbooksTests
 
