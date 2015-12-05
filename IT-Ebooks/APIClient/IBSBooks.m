@@ -144,3 +144,24 @@
 }
 
 @end
+
+@implementation IBSBookSimple
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary error:(NSError **)error
+{
+    if (dictionary) {
+        if (dictionary[@"Title"] && [dictionary[@"Title"] isKindOfClass:[NSString class]]) {
+            _Title = dictionary[@"Title"];
+        }
+        if (dictionary[@"Image"] && [dictionary[@"Image"] isKindOfClass:[NSString class]]) {
+            _Image = [NSURL URLWithString:dictionary[@"Image"]];
+        }
+        if (dictionary[@"DetailsURL"] && [dictionary[@"DetailsURL"] isKindOfClass:[NSString class]]) {
+            _DetailsURL = [NSURL URLWithString:dictionary[@"DetailsURL"]];
+        }
+    } else {
+        *error = [NSError errorWithDomain:@"JSON Parse Faild" code:500 userInfo:@{@"Error details:":@"JSON format missing."}];
+    }
+    return self;
+}
+
+@end

@@ -10,4 +10,12 @@
 
 @interface WebsiteIndexParser : NSObject
 
+- (instancetype)initWithWebsiteURL:(NSURL *)url;
+- (instancetype)initWithLocalHTMLFileData:(NSData *)data;
+
+- (NSArray *)getSectionNames;
+- (NSArray *)getTopDownloads;
+- (NSArray *)getLastUpload;
+- (NSArray *)getNewEbooks;
+
 @end

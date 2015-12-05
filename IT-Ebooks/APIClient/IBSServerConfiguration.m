@@ -10,4 +10,9 @@
 
 @implementation IBSServerConfiguration
 
++ (NSString *)serverUrl
+{
+    return @"http://it-ebooks-api.info/v1";
+}
+
 @end
