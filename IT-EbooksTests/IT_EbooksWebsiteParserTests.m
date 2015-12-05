@@ -1,5 +1,5 @@
 //
-//  WebsiteParserTests.m
+//  IT_EbooksWebsiteParserTests.m
 //  IT-Ebooks
 //
 //  Created by Aldo Castro on 17/10/15.
@@ -11,12 +11,12 @@
 #import "IBSBooks.h"
 
 
-@interface WebsiteParserTests : XCTestCase
+@interface IT_EbooksWebsiteParserTests : XCTestCase
 @property (nonatomic, strong) WebsiteIndexParser *parser;
 @end
 
 
-@implementation WebsiteParserTests
+@implementation IT_EbooksWebsiteParserTests
 
 - (void)setUp
 {
