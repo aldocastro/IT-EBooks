@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-set -ex
+set -ev
 brew update
 brew install xctool
