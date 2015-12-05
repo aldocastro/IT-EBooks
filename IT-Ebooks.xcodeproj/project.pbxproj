@@ -25,12 +25,7 @@
 		6E7769C41A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6E7769C51A62CC0000ABEF55 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7769C31A62CC0000ABEF55 /* CacheManager.m */; };
 		6E8A4DC81B4491DC005A03F3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8A4DC71B4491DC005A03F3 /* libxml2.dylib */; };
-		6E9003441C133FA3008A5635 /* content-wrapper.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E90033E1C133FA3008A5635 /* content-wrapper.html */; };
-		6E9003451C133FA3008A5635 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E90033F1C133FA3008A5635 /* Info.plist */; };
-		6E9003461C133FA3008A5635 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E9003401C133FA3008A5635 /* it-ebooks-index.html */; };
-		6E9003471C133FA3008A5635 /* LastUpload.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E9003411C133FA3008A5635 /* LastUpload.html */; };
-		6E9003481C133FA3008A5635 /* NewEbooks.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E9003421C133FA3008A5635 /* NewEbooks.html */; };
-		6E9003491C133FA3008A5635 /* TopDownload.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E9003431C133FA3008A5635 /* TopDownload.html */; };
+		6E90034A1C134795008A5635 /* it-ebooks-index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E9003401C133FA3008A5635 /* it-ebooks-index.html */; };
 		6EA426371A330F3300E058A4 /* IBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* IBSAPIClient.m */; };
 		6EA426381A330F3300E058A4 /* IBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426341A330F3300E058A4 /* IBSAPIClient.m */; };
 		6EA426391A330F3300E058A4 /* IBSBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA426361A330F3300E058A4 /* IBSBooks.m */; };
@@ -88,9 +83,6 @@
 		6E90033E1C133FA3008A5635 /* content-wrapper.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "content-wrapper.html"; path = "Supporting Files/content-wrapper.html"; sourceTree = "<group>"; };
 		6E90033F1C133FA3008A5635 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		6E9003401C133FA3008A5635 /* it-ebooks-index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "it-ebooks-index.html"; path = "Supporting Files/it-ebooks-index.html"; sourceTree = "<group>"; };
-		6E9003411C133FA3008A5635 /* LastUpload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = LastUpload.html; path = "Supporting Files/LastUpload.html"; sourceTree = "<group>"; };
-		6E9003421C133FA3008A5635 /* NewEbooks.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = NewEbooks.html; path = "Supporting Files/NewEbooks.html"; sourceTree = "<group>"; };
-		6E9003431C133FA3008A5635 /* TopDownload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = TopDownload.html; path = "Supporting Files/TopDownload.html"; sourceTree = "<group>"; };
 		6EA426331A330F3300E058A4 /* IBSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSAPIClient.h; sourceTree = "<group>"; };
 		6EA426341A330F3300E058A4 /* IBSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBSAPIClient.m; sourceTree = "<group>"; };
 		6EA426351A330F3300E058A4 /* IBSBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBSBooks.h; sourceTree = "<group>"; };
@@ -197,9 +189,6 @@
 				6E90033F1C133FA3008A5635 /* Info.plist */,
 				6E90033E1C133FA3008A5635 /* content-wrapper.html */,
 				6E9003401C133FA3008A5635 /* it-ebooks-index.html */,
-				6E9003411C133FA3008A5635 /* LastUpload.html */,
-				6E9003421C133FA3008A5635 /* NewEbooks.html */,
-				6E9003431C133FA3008A5635 /* TopDownload.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -404,13 +393,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9003441C133FA3008A5635 /* content-wrapper.html in Resources */,
-				6E9003491C133FA3008A5635 /* TopDownload.html in Resources */,
-				6E9003471C133FA3008A5635 /* LastUpload.html in Resources */,
-				6E9003481C133FA3008A5635 /* NewEbooks.html in Resources */,
-				6E9003461C133FA3008A5635 /* it-ebooks-index.html in Resources */,
+				6E90034A1C134795008A5635 /* it-ebooks-index.html in Resources */,
 				6E7769C11A619BFF00ABEF55 /* ebooks.json in Resources */,
-				6E9003451C133FA3008A5635 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +726,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "IT-EbooksTests/Info.plist";
+				INFOPLIST_FILE = "IT-EbooksTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IT-Ebooks.app/IT-Ebooks";
@@ -758,7 +742,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "IT-EbooksTests/Info.plist";
+				INFOPLIST_FILE = "IT-EbooksTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IT-Ebooks.app/IT-Ebooks";
