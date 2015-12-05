@@ -1,1 +1,9 @@
+# file: .travis.yml
+language: objective-c
+before_install:
+	- brew update
+	- brew install xctool
+
+script:
+  - xctoll -workspace IT-Ebooks.xcworkspace -scheme IT-Ebooks test
 
