@@ -21,13 +21,23 @@
 - (void)setUp
 {
     [super setUp];
-    self.parser = [[WebsiteIndexParser alloc] initWithLocalHTMLFileName:@"it-ebooks-index"];
+    NSData *htmlData = [self loadDataFromHTMLFileName:@"it-ebooks-index"];
+    self.parser = [[WebsiteIndexParser alloc] initWithLocalHTMLFileData:htmlData];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (NSData *)loadDataFromHTMLFileName:(NSString *)name
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *htmlContent =  [bundle pathForResource:name ofType:@"html"];
+    NSError *error = nil;
+    NSData *hmtlData = [NSData dataWithContentsOfFile:htmlContent options:0 error:&error];
+    return hmtlData;
 }
 
 - (void)test_1_returnsSectionNames

@@ -22,11 +22,10 @@ NSString * const kBaseURL = @"it-ebooks.info";
 
 @implementation WebsiteIndexParser
 
-- (instancetype)initWithLocalHTMLFileName:(NSString *)fileName
+- (instancetype)initWithLocalHTMLFileData:(NSData *)data
 {
     self = [super init];
     if (self) {
-        NSData *data = [self loadDataFromHTMLFileName:fileName];
         _parser = [TFHpple hppleWithHTMLData:data];
     }
     return self;
@@ -40,14 +39,6 @@ NSString * const kBaseURL = @"it-ebooks.info";
         _parser = [TFHpple hppleWithHTMLData:data];
     }
     return self;
-}
-
-- (NSData *)loadDataFromHTMLFileName:(NSString *)name
-{
-    NSString *htmlContent = [[NSBundle mainBundle] pathForResource:name ofType:@"html"];
-    NSError *error = nil;
-    NSData *hmtlData = [NSData dataWithContentsOfFile:htmlContent options:0 error:&error];
-    return hmtlData;
 }
 
 - (NSMutableArray *)doParsingForSectionName:(NSString *)sectionName

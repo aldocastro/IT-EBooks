@@ -11,7 +11,7 @@
 @interface WebsiteIndexParser : NSObject
 
 - (instancetype)initWithWebsiteURL:(NSURL *)url;
-- (instancetype)initWithLocalHTMLFileName:(NSString *)fileName;
+- (instancetype)initWithLocalHTMLFileData:(NSData *)data;
 
 - (NSArray *)getSectionNames;
 - (NSArray *)getTopDownloads;
