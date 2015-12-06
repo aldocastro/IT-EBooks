@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
 set -ev
 brew update
-#brew install xctool
-brew unlink xctool
-brew install xctool --HEAD
+if brew outdated --quiet | grep -qx xctool; then brew upgrade xctool; fi
